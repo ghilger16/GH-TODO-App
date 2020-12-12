@@ -2,6 +2,7 @@
 
 let ul = document.querySelector(".list");
 let li = document.getElementById("item");
+let form = document.getElementById("form");
 
 const addToList = function (a) {
   let newItem = a;
@@ -11,8 +12,14 @@ const addToList = function (a) {
   ul.appendChild(newLi);
 };
 
-addToList("something to do");
+let enterText = form.addEventListener("submit", function (e) {
+  if (e.key === "Enter") {
+    let formText = document.getElementById("form-text").value;
+    addToList(formText);
+  }
+});
 
-let formText = document.querySelector('input[type="text"]');
-
-formText.addEventListener("keydown", addToList());
+// const getFormText = function () {
+//   let formText = document.getElementById("form-text").value;
+//   addToList(formText);
+// };

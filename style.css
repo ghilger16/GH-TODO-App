@@ -1,0 +1,21 @@
+// const addToList = function (a) {
+//   let newItem = a;
+//   let newLi = document.createElement("LI");
+//   let text = document.createTextNode(newItem);
+//   let button = document.createElement("button");
+//   button.innerText = "done";
+//   newLi.appendChild(button);
+//   newLi.appendChild(text);
+//   ul.appendChild(newLi);
+// };
+
+// btn.addEventListener("click", function () {
+//   let text = itemList.value;
+//   addToList(text);
+// });
+
+// let enterText = form.addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   let formText = document.getElementById("form-text").value;
+//   addToList(formText);
+// });

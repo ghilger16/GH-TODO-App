@@ -4,7 +4,7 @@ A simple To-Do checklist written in Javascript, HTML and CSS.
 
 Give it a try here: https://ghilger16.github.io/GH-TODO-App/
 
-![](images/preview.png)
+![](Images/preview.png)
 
 Summary
 

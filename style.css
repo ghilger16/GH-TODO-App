@@ -8,6 +8,11 @@ body {
   justify-content: center;
 }
 
+#form-text {
+  height: 40px;
+  width: 25%;
+}
+
 #list {
   display: flex;
   justify-content: center;

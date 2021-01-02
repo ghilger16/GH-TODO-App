@@ -1,11 +1,11 @@
 "use strict";
 
+/// element list
 let ul = document.querySelector(".list");
 let li = document.getElementById("items");
 let form = document.getElementById("form");
-let itemList = document.getElementById("form-text");
-let btn = document.getElementById("btn");
 
+// creates list item element with button
 const addLi = function (text) {
   /// user list item element
   let newItem = text;
@@ -15,15 +15,23 @@ const addLi = function (text) {
   newLi.appendChild(newText);
   li.appendChild(newLi);
 
+  const span = document.createElement("span");
+  newLi.appendChild(span);
+
   // item button element
   let newBtn = document.createElement("button");
   newBtn.innerText = "❌";
   newBtn.setAttribute("id", "button");
   newLi.appendChild(newBtn);
+  span.appendChild(newBtn);
 
   // list item event
+  let isChecked = false;
   newLi.addEventListener("click", () => {
-    newLi.style.textDecoration = "line-through";
+    isChecked = !isChecked;
+    isChecked === true
+      ? (newLi.style.textDecoration = "line-through")
+      : (newLi.style.textDecoration = "none");
   });
 
   // button event
@@ -32,8 +40,15 @@ const addLi = function (text) {
   });
 };
 
+// form event that performs addLi funciton to user's input
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  let formText = new addLi(document.getElementById("form-text").value);
-  document.getElementById("form-text").value = "";
+
+  let todoText = document.getElementById("form-text");
+  if (todoText.value === "") {
+    alert("Please fill out the input field before submitting");
+  } else {
+    addLi(todoText.value);
+    todoText.value = "";
+  }
 });
